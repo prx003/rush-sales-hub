@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AdmissionsProvider } from "@/components/sales/admissions/context";
 import { ApplicationDetail } from "@/components/sales/admissions/workspace";
 
 export const Route = createFileRoute("/_app/sales/applications/$id")({
