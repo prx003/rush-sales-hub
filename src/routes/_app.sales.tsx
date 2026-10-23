@@ -4,32 +4,43 @@ import { PageHeader } from "@/components/ui/page";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AgentSideNav } from "@/components/sales/agent-sidenav";
+import { AdmissionsProvider } from "@/components/sales/admissions/context";
+import { RoleSwitcher } from "@/components/sales/admissions/workspace";
 
 export const Route = createFileRoute("/_app/sales")({
   component: SalesLayout,
 });
 
-const TABS: { to: "/sales" | "/sales/agents" | "/sales/leads"; label: string; exact?: boolean }[] = [
+const TABS: {
+  to: "/sales" | "/sales/agents" | "/sales/leads" | "/sales/applications" | "/sales/finance" | "/sales/form-builder";
+  label: string;
+  exact?: boolean;
+}[] = [
   { to: "/sales", label: "Dashboard", exact: true },
   { to: "/sales/agents", label: "Agents" },
   { to: "/sales/leads", label: "Lead Pool" },
+  { to: "/sales/applications", label: "Skill AI Admissions" },
+  { to: "/sales/finance", label: "Finance Desk" },
+  { to: "/sales/form-builder", label: "Form Builder" },
 ];
 
 function SalesLayout() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <div className="space-y-6">
-      <PageHeader
+    <AdmissionsProvider>
+      <div className="space-y-6">
+        <PageHeader
         title="Sales"
         subtitle="Pipeline, agents, leads and live performance"
         actions={
           <>
+            <RoleSwitcher />
             <Button variant="outline" size="sm" className="gap-1.5">
               <Download className="size-4" /> Export
             </Button>
-            <Link to="/sales/agents">
+            <Link to="/sales/application">
               <Button size="sm" className="gap-1.5">
-                <Plus className="size-4" /> Add agent
+                <Plus className="size-4" /> New application
               </Button>
             </Link>
           </>
@@ -62,6 +73,7 @@ function SalesLayout() {
           <Outlet />
         </div>
       </div>
-    </div>
+      </div>
+    </AdmissionsProvider>
   );
 }

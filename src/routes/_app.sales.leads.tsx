@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { Upload, Plus, Search } from "lucide-react";
+import { Upload, Search } from "lucide-react";
 import { Section } from "@/components/ui/page";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSales, salesActions, type Lead } from "@/lib/sales-store";
+import { SendApplication } from "@/components/sales/admissions/workspace";
 
 export const Route = createFileRoute("/_app/sales/leads")({
   component: LeadPool,
@@ -67,6 +68,7 @@ function LeadPool() {
                 <th className="px-3 py-3 text-left font-medium">Interest</th>
                 <th className="px-3 py-3 text-right font-medium">Value</th>
                 <th className="px-3 py-3 text-left font-medium">Status</th>
+                <th className="px-3 py-3 text-left font-medium">Application form</th>
                 <th className="px-5 py-3 text-left font-medium">Agent</th>
               </tr>
             </thead>
@@ -83,6 +85,9 @@ function LeadPool() {
                   <td className="px-3 py-3">
                     <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-secondary text-secondary-foreground">{l.status}</span>
                   </td>
+                  <td className="px-3 py-3">
+                    <SendApplication lead={l} />
+                  </td>
                   <td className="px-5 py-3">
                     <select
                       value={l.agentId ?? ""}
@@ -96,7 +101,7 @@ function LeadPool() {
                 </tr>
               ))}
               {filtered.length === 0 && (
-                <tr><td colSpan={6} className="px-5 py-10 text-center text-sm text-muted-foreground">No leads in the pool.</td></tr>
+                <tr><td colSpan={7} className="px-5 py-10 text-center text-sm text-muted-foreground">No leads in the pool.</td></tr>
               )}
             </tbody>
           </table>
