@@ -101,7 +101,7 @@ function LeadPool() {
                 </tr>
               ))}
               {filtered.length === 0 && (
-                <tr><td colSpan={6} className="px-5 py-10 text-center text-sm text-muted-foreground">No leads in the pool.</td></tr>
+                <tr><td colSpan={7} className="px-5 py-10 text-center text-sm text-muted-foreground">No leads in the pool.</td></tr>
               )}
             </tbody>
           </table>
