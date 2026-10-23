@@ -1,0 +1,11 @@
+- [x] Inspect the college portal repository and current app navigation.
+- [x] Integrate its role-based screens and controls into the Zenith app menu.
+- [x] Verify role switching, available menu items, and the preview build.
+- [x] Add the Governing Body & Executive Management workspace from the shared Drive package.
+- [x] Add the Marketing, Admissions & PR workspace from the shared Drive package with Zenith UI.
+- [x] Real sign-in (email + Google) with role-based menus and a Users & Roles admin page.
+- [x] Save HR, Sales, College Portal, Governance and Marketing data to Lovable Cloud.
+- [x] Match College Portal, Marketing, Placement, and Governance to the existing application UI without changing their workflows.
+- [x] Check all four workspaces while signed in.
+- [ ] Add the Skill AI eight-section application form and Sales admissions workspace without redesigning Sales.
+- [ ] Connect application submissions, independent signoffs, finance ledger, course fees and lead sharing; verify persistence and workflows.
