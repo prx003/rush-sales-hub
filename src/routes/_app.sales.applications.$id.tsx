@@ -17,9 +17,5 @@ export const Route = createFileRoute("/_app/sales/applications/$id")({
 
 function SalesApplicationDetailPage() {
   const { id } = Route.useParams();
-  return (
-    <AdmissionsProvider>
-      <ApplicationDetail id={id} />
-    </AdmissionsProvider>
-  );
+  return <ApplicationDetail id={id} />;
 }

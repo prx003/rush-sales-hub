@@ -16,9 +16,5 @@ export const Route = createFileRoute("/_app/sales/applications")({
 });
 
 function SalesApplicationsPage() {
-  return (
-    <AdmissionsProvider>
-      <ApplicationsList />
-    </AdmissionsProvider>
-  );
+  return <ApplicationsList />;
 }

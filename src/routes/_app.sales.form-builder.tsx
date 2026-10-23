@@ -16,9 +16,5 @@ export const Route = createFileRoute("/_app/sales/form-builder")({
 });
 
 function SalesFormBuilderPage() {
-  return (
-    <AdmissionsProvider>
-      <FormBuilder />
-    </AdmissionsProvider>
-  );
+  return <FormBuilder />;
 }
