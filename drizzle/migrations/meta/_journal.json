@@ -15,6 +15,13 @@
       "when": 1792666789297,
       "tag": "0001_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792730712669,
+      "tag": "0002_app_state_and_roles",
+      "breakpoints": true
     }
   ]
 }
