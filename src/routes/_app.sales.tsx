@@ -73,6 +73,7 @@ function SalesLayout() {
           <Outlet />
         </div>
       </div>
-    </div>
+      </div>
+    </AdmissionsProvider>
   );
 }
