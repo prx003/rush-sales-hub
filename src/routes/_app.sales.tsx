@@ -27,18 +27,20 @@ const TABS: {
 function SalesLayout() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <div className="space-y-6">
-      <PageHeader
+    <AdmissionsProvider>
+      <div className="space-y-6">
+        <PageHeader
         title="Sales"
         subtitle="Pipeline, agents, leads and live performance"
         actions={
           <>
+            <RoleSwitcher />
             <Button variant="outline" size="sm" className="gap-1.5">
               <Download className="size-4" /> Export
             </Button>
-            <Link to="/sales/agents">
+            <Link to="/sales/application">
               <Button size="sm" className="gap-1.5">
-                <Plus className="size-4" /> Add agent
+                <Plus className="size-4" /> New application
               </Button>
             </Link>
           </>
